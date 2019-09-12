@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="container centerpage">
+
+    <!-- <div class="col-md-4 col-md-offset-4"></div> -->
+  
+    <div class="col-md-4 col-md-offset-4">
+     <br>
+     <br>
+      <section>
+        <div class="panel panel-default">
+          <h3 class="text-center"><b>Sign In</b></h3>
+          <div class="panel-body">
+            <form method="post" (submit)="authenticateCurrentUser($event)">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+              <input type="text" name="username" id="username" class="form-control" placeholder="Enter Username" aria-describedby="sizing-addon1" required>
+            </div>
+            <br>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-asterisk" aria-hidden="true"></i></span>
+              <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" aria-describedby="sizing-addon1" required>
+            </div>
+            <br>
+             <button type="submit" class="btn btn-primary btn-lg center-block">Sign in</button>
+            <br>
+              <div class="alert alert-danger" role="alert" *ngIf="this.loggedInErrorMessage != ' '">
+                <strong>Error! {{loggedInErrorMessage}}</strong>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div> 
+  
+    <!-- <div class="col-md-4 col-md-offset-4"></div> -->
+  
+  </div>

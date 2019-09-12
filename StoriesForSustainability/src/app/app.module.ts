@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 import { UploadStoryComponent } from './upload-story/upload-story.component';
 import { AuthGuard } from './auth.guard';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; 
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes = [
   {
@@ -44,6 +46,8 @@ const appRoutes:Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    NgIdleKeepaliveModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [
     AuthGuard,
