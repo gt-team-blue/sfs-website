@@ -1,0 +1,35 @@
+.myclass {
+	background-color: #202E39;
+	color: white;
+	font-size: 20px;
+}
+
+.centerpage {
+    min-height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    ::-webkit-input-placeholder {
+		font-size: 17px!important;
+	 }
+	 :-moz-placeholder {
+		   font-size: 17px!important;
+	 }
+	 ::-moz-placeholder {
+		   font-size: 17px!important;
+	 }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    ::-webkit-input-placeholder {
+		font-size: 16px!important;
+	 }
+	 :-moz-placeholder {
+		   font-size: 16px!important;
+	 }
+	 ::-moz-placeholder {
+		   font-size: 16px!important;
+	 }
+}

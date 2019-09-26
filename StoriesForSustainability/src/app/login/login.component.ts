@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
      this.loggedInErrorMessage = this.user.getUserLoggedInErrorMessage();
   }
 
-  authenticateCurrentUser(e){
-    e.preventDefault();
-    var username = e.target.elements[0].value;
-    var password = e.target.elements[1].value;
+  authenticateCurrentUser(user){
+    user.preventDefault();
+    var username = user.target.elements[0].value;
+    var password = user.target.elements[1].value;
     var result;
     var loginObject = {currentUsername : username, currentPassword: password};
     var response = this.http.post('/authenticate', loginObject).subscribe(data => {
