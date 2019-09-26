@@ -1,1 +1,14 @@
-<p>header works!</p>
+<ng-container *ngIf="!loggedIn">
+    <div class="container padzero">
+     <div class="row padmarzero">
+      <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+      </div>
+      <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+        <a routerLink="/home">
+            <img class="img-responsive page-logo" src=""/> <!--- put an image here in a bit-->
+        </a>
+      </div>
+     <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2"></div>
+     </div>
+    </div>
+    </ng-container>
