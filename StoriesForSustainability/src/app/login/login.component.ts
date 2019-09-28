@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
           }
         });
       } else {
+        this.router.navigate(['home']);
         this.user.setUserLoggedInErrorMessage(data['message']);
       }
     });

@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate {
                  return: state.url
                }
              });
-             this.user.setUserLoggedInErrorMessage('Not logged in Please login to continue');
+             this.user.setUserLoggedInErrorMessage('Not logged in. Please login to continue');
              resolve(false);
            }
         });

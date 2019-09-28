@@ -34,10 +34,9 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 
 
-
 app.get('*', function (req, res) {
   console.log('I received a GET request');
-  res.sendFile(path.join(__dirname, '/dist/index.html'));
+  res.sendFile(path.join(__dirname, './dist/StoriesForSustainability/index.html'));
 });
 
 app.post('/logout', function (req, res) {
@@ -49,12 +48,20 @@ app.post('/getLoginCredentials', function (req, res) {
 });
 
 app.post('/authenticate', function (req, res) {
+  db.users.findOne({"username": req.body['username'], "password": req.body['password']}, function(err, doc){
+    if(doc){
+      res.json({"user": doc});
+    } else {
+      console.log(err);
+      res.json({"error": "no users found"})
+    }
+  });
 });
 
 // Returns info for a UserObject
 app.post('/getUserInfo', function (req, res) {
-  return res.json({isAuthenticated : req.session.isAuthenticated, username : req.session.username, 
-    email : req.session.email, givenName : req.session.loggedInUserGivenName, displayName : req.session.displayName });
+  // return res.json({isAuthenticated : req.session.isAuthenticated, username : req.session.username, 
+  //   email : req.session.email, givenName : req.session.loggedInUserGivenName, displayName : req.session.displayName });
   });
 
 

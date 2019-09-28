@@ -1,1 +1,29 @@
-<p>footer works!</p>
+<ng-container *ngIf="loggedIn">        
+    <!-- Footer -->
+    <footer class="all-footer">
+
+    <footer class="dark-footer">
+
+            <!--Footer Links-->
+            <div class="footer-container green-footer">
+        
+                <!-- Single Column footer -->
+                <div class="row single-col-footer">
+                    <!--Grid column-->
+                    <div class="col-md-12 col-lg-12">
+                        <p class="h6 footer-copyright text-center">Copyright &copy; {{year}} Stories for Sustainability (v1.0.0)</p>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!-- End Single Column footer -->
+        
+            </div>
+        
+            <div class="footer-container">
+            </div>
+        
+        </footer>
+
+    </footer>
+        <!-- End of Footer -->
+</ng-container>
