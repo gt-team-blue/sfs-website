@@ -1,6 +1,6 @@
 export class UserObject {
-    username: string; // string representing a user's username from LDAP server
-    email: string; // string representing a user's Viasat email
+    username: string; // string representing a user's username
+    email: string; // string representing a user's email
     givenName: string; // string representing a user's first name
     displayName: string; // string representing a user's name in "Last, First" format
 

@@ -11,6 +11,7 @@ import { UploadStoryComponent } from './upload-story/upload-story.component';
 import { AuthGuard } from './auth.guard';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; 
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes:Routes = [
   {
@@ -41,7 +42,8 @@ const appRoutes:Routes = [
     FooterComponent,
     LoginComponent,
     SettingsComponent,
-    UploadStoryComponent
+    UploadStoryComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
