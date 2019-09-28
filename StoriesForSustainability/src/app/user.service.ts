@@ -26,6 +26,10 @@ export class UserService {
     createUserObject(username:string, email:string, givenName:string, displayName:string) {
       return new UserObject(username, email, givenName, displayName);
     }
+
+      // For logging out
+  logOutCurrentUser(){
+  }
     
     //Return the user object
     getUser() {
