@@ -37,7 +37,9 @@ export class LoginComponent implements OnInit {
       this.loggedInErrorMessage = "Please enter your username";
     } else if (this.password == "") {
       this.loggedInErrorMessage = "Please enter your password";
-    } else {
+    } else if (this.username.length < 10) {
+      this.loggedInErrorMessage = "Invalid Username and Password Combination"
+     } else {
       this.router.navigate(['home']);
     }
 
