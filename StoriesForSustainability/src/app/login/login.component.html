@@ -15,12 +15,12 @@
             <form method="post" (submit)="authenticateCurrentUser($event)">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-              <input type="text" name="username" id="username" class="form-control" placeholder="Enter Username" aria-describedby="sizing-addon1" required>
+              <input [(ngModel)]="username" type="text" name="username" id="username" class="form-control" placeholder="Enter Username" aria-describedby="sizing-addon1" required>
             </div>
             <br>
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-asterisk" aria-hidden="true"></i></span>
-              <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" aria-describedby="sizing-addon1" required>
+              <input [(ngModel)]="password" type="password" name="password" id="password" class="form-control" placeholder="Enter Password" aria-describedby="sizing-addon1" required>
             </div>
             <br>
              <button type="submit" class="btn btn-primary btn-lg center-block">Sign in</button>

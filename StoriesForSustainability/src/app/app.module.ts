@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -12,6 +14,15 @@ import { AuthGuard } from './auth.guard';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; 
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CreateStoryComponent } from './create-story/create-story.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule, MatSelectModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const appRoutes:Routes = [
   {
@@ -24,8 +35,7 @@ const appRoutes:Routes = [
   },
   {
     path: 'create',
-    canActivate: [AuthGuard],
-    component: UploadStoryComponent
+    component: CreateStoryComponent
   },
   {
     path: 'create/:planType',
@@ -42,13 +52,22 @@ const appRoutes:Routes = [
     LoginComponent,
     SettingsComponent,
     UploadStoryComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateStoryComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
     NgIdleKeepaliveModule.forRoot(),
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
     HttpClientModule,
+    MatSnackBarModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   providers: [
     AuthGuard,

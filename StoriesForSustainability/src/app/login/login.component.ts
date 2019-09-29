@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
   serverMessage = "";
   isAuth: boolean;
   loggedInErrorMessage: string;
-  
+  username: string = "";
+  password: string = "";
   constructor(private route: ActivatedRoute, private router:Router, private user:UserService, private http:HttpClient, private app:AppComponent) {}
 
   ngOnInit() {
@@ -27,11 +28,19 @@ export class LoginComponent implements OnInit {
 
   authenticateCurrentUser(user){
     user.preventDefault();
-    var username = user.target.elements[0].value;
-    var password = user.target.elements[1].value;
-    var result;
-    var loginObject = {currentUsername : username, currentPassword: password};
-    this.router.navigate(['home']);
+    // var username = user.target.elements[0].value;
+    // var password = user.target.elements[1].value;
+    // var result;
+    // var loginObject = {currentUsername : username, currentPassword: password};
+   
+    if (this.username == "") {
+      this.loggedInErrorMessage = "Please enter your username";
+    } else if (this.password == "") {
+      this.loggedInErrorMessage = "Please enter your password";
+    } else {
+      this.router.navigate(['home']);
+    }
+
     // var response = this.http.post('/authenticate', loginObject).subscribe(data => {
     //   if(data['isAuthenticated'] == true) {
     //     setTimeout(function(){}.bind(this),2000);

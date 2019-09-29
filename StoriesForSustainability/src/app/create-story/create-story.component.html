@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="entire-page">
+  <h1 style="text-align: center">Create Story</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <form id="masterForm" method="post" class="vp-form">
+          <div data-track-content data-content-name="Form" data-content-piece="form_input_req_1" class="vp-form-text">
+              <div class="vp-form-bdr">
+                <h3 data-track-content data-content-name="Form" data-content-piece="form_text_title_section_2"
+                  class="vp-form-h3-basic" style="text-align: center">Enter Story Name:</h3>
+                <input [(ngModel)]="title" type="text" class="form-control" id="vpInputReq" name="vpInputReq"
+                  placeholder="" />
+              </div>
+              <div *ngIf="titleErr" style="color:red;">{{titleErr}}</div>
+              <div class="vp-form-message"><span></span></div>
+            </div>
+          <h3 data-track-content data-content-name="Form" data-content-piece="form_text_title_section_2"
+          class="vp-form-h3-basic" style="text-align: center">Upload Story: </h3>
+          <div data-track-content data-content-name="Form" data-content-piece="form_selectdropdown_opt_1">
+              <div class="vp-form-bdr">
+                  <div class="form-group">
+                      <input type="file" accept=".pdf"/>
+                  </div>
+                </div>
+            </div>
+        <div class="form-group">
+          <button data-track-content data-content-name="Form" data-content-piece="form_button_primary_1" type="submit"
+            class="btn btn-primary btn-lg" name="masterForm" mat-button (click)="openSnackBar()">Create Story</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

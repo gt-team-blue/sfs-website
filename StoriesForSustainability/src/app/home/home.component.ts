@@ -27,6 +27,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUser().subscribe((res) => {
+      // if(res['isAuthenticated'] == true) {
+      //   this.myUser = this.userService.createUserObject(res['username'], res['email'], res['givenName'], res['displayName']);
+      // }
       this.http.post('/getUserStories', { "username": this.myUser.username }).toPromise().then((res => {
         this.userStories = res['userStories'] as StoryObject[];
       }))
