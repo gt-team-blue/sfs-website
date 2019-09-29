@@ -1,0 +1,35 @@
+i { 
+    cursor: pointer; 
+}
+
+th.icon {
+    text-align: center;
+}
+
+td {
+    white-space: -o-pre-wrap; 
+    word-wrap: break-word;
+    white-space: pre-wrap; 
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap; 
+}
+
+table {
+    table-layout: fixed;
+}
+
+.container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+    min-width: 100%;
+}
+
+.table .td-center {
+    text-align: center;
+}
+
+.table .td-left {
+    text-align: left;
+}

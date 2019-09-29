@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+import { UserObject } from '../userobject';
+import { StoryObject } from '../storyobject';
+import { UserService } from '../user.service';
+import { StoryService } from '../story.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +13,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  userStories: StoryObject[]; // All plans user has read access to
+
+  myUser: UserObject;
+  isAdmin: boolean;
+  filterStoryName: string = "";
+  filterLastUpdated: string = "";
+  filterLastUpdatedBy: string = "";
+  ready: boolean = false;
+
+
+  constructor(private router: Router, private http: HttpClient, private userService: UserService, private storyService: StoryService) { }
 
   ngOnInit() {
+    this.userService.getUser().subscribe((res) => {
+      this.http.post('/getUserStories', { "username": this.myUser.username }).toPromise().then((res => {
+        this.userStories = res['userStories'] as StoryObject[];
+      }))
+    });
+  }
+
+  ngDoCheck() {
+    this.ready = true;
   }
 
 }

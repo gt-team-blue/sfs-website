@@ -47,6 +47,7 @@ app.post('/logout', function (req, res) {
 app.post('/getLoginCredentials', function (req, res) {
 });
 
+//idk if this works yet
 app.post('/authenticate', function (req, res) {
   db.users.findOne({"username": req.body['username'], "password": req.body['password']}, function(err, doc){
     if(doc){
@@ -64,22 +65,12 @@ app.post('/getUserInfo', function (req, res) {
   //   email : req.session.email, givenName : req.session.loggedInUserGivenName, displayName : req.session.displayName });
   });
 
+app.post('/getUserStories', function(req,res) {
+  db.stories.find({ $or:[{creator: req.body.username}, {editAccess: req.body.username}]}).toArray(function(err, userPlans) {
+    res.json({"userPlans" : userPlans});
+  });
+});
 
-
-function serverLogoutPlans(username) {
-  db.planList.update(
-    { currentEditor : username },
-    {
-      $set: { "currentEditor" : "", "editLock" : false }
-    }, function(err, doc) {
-      if (err) {
-        console.log("ERROR");
-      } else {
-        console.log(doc);
-      }
-    }
-  )
-};
 
 
 

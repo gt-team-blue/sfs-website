@@ -31,22 +31,23 @@ export class LoginComponent implements OnInit {
     var password = user.target.elements[1].value;
     var result;
     var loginObject = {currentUsername : username, currentPassword: password};
-    var response = this.http.post('/authenticate', loginObject).subscribe(data => {
-      if(data['isAuthenticated'] == true) {
-        setTimeout(function(){}.bind(this),2000);
-        this.app.reset(); // Reset timeout
-        this.route.queryParams.subscribe((params: Params) => {
-          if (params['return']) {
-            this.router.navigate([params['return']]);
-          } else {
-            this.router.navigate(['home']);
-          }
-        });
-      } else {
-        this.router.navigate(['home']);
-        this.user.setUserLoggedInErrorMessage(data['message']);
-      }
-    });
+    this.router.navigate(['home']);
+    // var response = this.http.post('/authenticate', loginObject).subscribe(data => {
+    //   if(data['isAuthenticated'] == true) {
+    //     setTimeout(function(){}.bind(this),2000);
+    //     this.app.reset(); // Reset timeout
+    //     this.route.queryParams.subscribe((params: Params) => {
+    //       if (params['return']) {
+    //         this.router.navigate([params['return']]);
+    //       } else {
+    //         this.router.navigate(['home']);
+    //       }
+    //     });
+    //   } else {
+    //     this.router.navigate(['home']);
+    //     this.user.setUserLoggedInErrorMessage(data['message']);
+    //   }
+    // });
   }
 
 }
