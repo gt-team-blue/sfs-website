@@ -5,6 +5,8 @@ import { UserObject } from '../userobject';
 import { StoryObject } from '../storyobject';
 import { UserService } from '../user.service';
 import { StoryService } from '../story.service';
+import * as Constants from '../constants/Network';
+import axios from 'axios';
 
 @Component({
   selector: 'app-home',
@@ -26,15 +28,16 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient, private userService: UserService, private storyService: StoryService) { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe((res) => {
-      // if(res['isAuthenticated'] == true) {
-      //   this.myUser = this.userService.createUserObject(res['username'], res['email'], res['givenName'], res['displayName']);
-      // }
-      this.http.post('/getUserStories', { "username": this.myUser.username }).toPromise().then((res => {
-        this.userStories = res['userStories'] as StoryObject[];
-      }))
-    });
-  }
+    var self = this;
+    console.log(self.userService.getEmail());
+    axios.post(Constants.SERVER_URL + '/api/stories/storiesByEditor', {
+      email: self.userService.getEmail()
+    }).then((response) => {
+      console.log(response);
+  }).catch(function(error) {
+    console.log(error.response);
+  })
+}
 
   ngDoCheck() {
     this.ready = true;

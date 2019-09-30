@@ -17,20 +17,20 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.router.events
     .subscribe((event) => {
-      if(event instanceof NavigationEnd ){
-        this.user.getUser().subscribe((res) => {
-          if(res['isAuthenticated'] == true){ 
-            this.loggedIn = true;
-          } else {
-            this.loggedIn = false;
-          }
-        });
-      }
-      this.user.getUser().subscribe((res) => {
-        if(res['isAuthenticated'] == true) {
-          this.myUser = this.user.createUserObject(res['username'], res['email'], res['givenName'], res['displayName']);
-        }
-      });
+      // if(event instanceof NavigationEnd ){
+      //   this.user.getUser().subscribe((res) => {
+      //     if(res['isAuthenticated'] == true){ 
+      //       this.loggedIn = true;
+      //     } else {
+      //       this.loggedIn = false;
+      //     }
+      //   });
+      // }
+      // this.user.getUser().subscribe((res) => {
+      //   if(res['isAuthenticated'] == true) {
+      //     this.myUser = this.user.createUserObject(res['username'], res['email'], res['givenName'], res['displayName']);
+      //   }
+      // });
     })
   }
 

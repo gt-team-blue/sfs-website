@@ -1,13 +1,11 @@
 export class UserObject {
-    username: string; // string representing a user's username
-    email: string; // string representing a user's email
-    givenName: string; // string representing a user's first name
-    displayName: string; // string representing a user's name in "Last, First" format
+    name: string; // string representing a user's full name
+    email: string; // string representing a user's email (use this for requests)
+    _id: string; // mongoID
 
-    constructor(username:string, email:string, givenName:string, displayName:string) {
-        this.username = username;
+    constructor(name:string, email:string, _id:string) {
+        this.name = name;
         this.email = email;
-        this.givenName = givenName;
-        this.displayName = displayName;
+        this._id = _id;
     }
 }

@@ -33,7 +33,7 @@ export class AppComponent {
       this.idleState = 'Timed out!';
       this.timedOut = true;
       this.display='none';
-      this.user.logOutCurrentUser();
+      // this.user.logOutCurrentUser();
     });
     idle.onIdleStart.subscribe(() => {
       this.idleState = 'You\'ve gone idle!';
@@ -64,7 +64,7 @@ export class AppComponent {
 
   logoutUser() {
     this.display='none'; 
-    this.user.logOutCurrentUser();
+    // this.user.logOutCurrentUser();
   }
 
   onCloseHandled() {

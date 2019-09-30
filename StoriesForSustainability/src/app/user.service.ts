@@ -3,36 +3,36 @@ import { UserObject } from './userobject';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class UserService {
   private errorMessage;
   private myUser:UserObject;
 
-  constructor(private http:HttpClient, private router:Router) { 
+  constructor() { 
     this.errorMessage = ' ';
   }
 
-    // Error Message Methods
-    setUserLoggedInErrorMessage(message) {
-      this.errorMessage = message;
-    }
-    getUserLoggedInErrorMessage() {
-      return this.errorMessage;
-    }
-
-    //Come back to this -SS
-    createUserObject(username:string, email:string, givenName:string, displayName:string) {
-      return new UserObject(username, email, givenName, displayName);
-    }
-
-      // For logging out
-  logOutCurrentUser(){
+  // Error Message Methods
+  setUserLoggedInErrorMessage(message) {
+    this.errorMessage = message;
   }
-    
-    //Return the user object
-    getUser() {
-      return this.http.post('/getUserInfo',{});
-    }
+  getUserLoggedInErrorMessage() {
+    return this.errorMessage;
+  }
+  createUserObject(name:string, email:string, _id:string) {
+    this.myUser = new UserObject(name, email, _id);
+  }
+
+  initAll(){
+    this.errorMessage = ' ';
+  }
+  //Return the user object
+  getUser() {
+    return this.myUser;
+  }
+  
+  getEmail() {
+    return this.myUser.email;
+  }
 }

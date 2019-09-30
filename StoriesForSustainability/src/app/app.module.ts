@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { UserService } from './user.service';
+import { StoryService } from './story.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -23,6 +25,7 @@ import { MatButtonModule } from '@angular/material';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 const appRoutes:Routes = [
   {
@@ -70,7 +73,9 @@ const appRoutes:Routes = [
     MatCheckboxModule
   ],
   providers: [
+    UserService,
     AuthGuard,
+    StoryService
   ],
   bootstrap: [AppComponent]
 })
