@@ -10,6 +10,10 @@
     text-align:center;
 }
 
+.center1 {
+    align-items: center;
+}
+
 .row {
     max-width:500px;
 }

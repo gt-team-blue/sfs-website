@@ -7,28 +7,28 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Story ID</th>
         <th scope="col">Story Title</th>
+        <th scope="col">Story Author</th>
         <th scope="col">Date Last Updated</th>
-        <th scope="col">Creator</th>
+        <th scope="col">Tags</th>
         <th scope="col" class="icon">View</th>
         <th scope="col" class="icon">Edit</th>
       </tr>
     </thead>
     <colgroup>
-      <col style="width:40%"> <!-- survey id -->
+      <col style="width:60%"> <!-- survey id -->
       <col style="width:60%"> <!-- story name -->
-      <col style="width:40%"> <!-- date last updated -->
+      <col style="width:60%"> <!-- date last updated -->
       <col style="width:40%"> <!-- creator -->
-      <col style="width:40%"> <!-- view -->
-      <col style="width:40%"> <!-- edit -->
+      <col style="width:20%"> <!-- view -->
+      <col style="width:20%"> <!-- edit -->
     </colgroup> 
     <tbody>
       <ng-container *ngFor = "let story of userStories"><tr>
-        <td class="td-left">{{ story.story_id }}</td>        
-        <td class="td-left">{{ story.title }}</td>
+        <td class="td-left">{{ story.title }}</td>        
         <td class="td-left">{{ story.creator }}</td>
-        <td class="td-left">{{ story.lastUpdated | date : 'medium' }}</td> <!-- Pipe date to medium format -->
+        <td class="td-left">{{ story.creationDate }}</td>
+        <td class="td-left">{{ story.tags[0]}}</td> <!-- Pipe date to medium format -->
         <td class="td-center"><a (click)="storyService.storyView(story)"><i class="material-icons">remove_red_eye</i></a></td>
         <td class="td-center"><a (click)="storyService.storyEdit(story)"><i class="material-icons">edit</i></a></td>
         </tr></ng-container>

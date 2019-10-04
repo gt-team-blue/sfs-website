@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   filterLastUpdated: string = "";
   filterLastUpdatedBy: string = "";
   ready: boolean = false;
+  
 
 
   constructor(private router: Router, private http: HttpClient, private userService: UserService, private storyService: StoryService) { }
@@ -30,10 +31,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     var self = this;
     console.log(self.userService.getEmail());
-    axios.post(Constants.SERVER_URL + '/api/stories/storiesByEditor', {
-      email: self.userService.getEmail()
+    axios.get(Constants.SERVER_URL + '/api/stories/storiesByEditor', {
+      params: {
+        userEmail: self.userService.getEmail()
+      }
     }).then((response) => {
       console.log(response);
+      this.userStories = response.data.data as StoryObject[];
   }).catch(function(error) {
     console.log(error.response);
   })

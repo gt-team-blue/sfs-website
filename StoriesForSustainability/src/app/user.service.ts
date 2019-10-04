@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class UserService {
   private errorMessage;
   private myUser:UserObject;
+  private isAuthenticated:boolean;
 
   constructor() { 
     this.errorMessage = ' ';
@@ -22,6 +23,12 @@ export class UserService {
   }
   createUserObject(name:string, email:string, _id:string) {
     this.myUser = new UserObject(name, email, _id);
+  }
+  authenticateUser() {
+    this.isAuthenticated = true;
+  }
+  getAuthentication() {
+    return this.isAuthenticated;
   }
 
   initAll(){
