@@ -24,12 +24,10 @@ export class UserService {
   createUserObject(name:string, email:string, _id:string) {
     this.myUser = new UserObject(name, email, _id);
   }
-  authenticateUser() {
-    this.isAuthenticated = true;
+  logout() {
+    this.myUser = null;
   }
-  getAuthentication() {
-    return this.isAuthenticated;
-  }
+
 
   initAll(){
     this.errorMessage = ' ';

@@ -87,3 +87,13 @@
 h1 {
     margin-left: 80px;
   }
+h4 {
+    margin-right: 40px;
+    margin-top: 20px;
+  }
+h4.hover {
+  cursor:wait;
+}
+.log-out {
+  cursor:wait;
+}
