@@ -15,17 +15,18 @@
               <div class="vp-form-message"><span></span></div>
             </div>
           <h3 data-track-content data-content-name="Form" data-content-piece="form_text_title_section_2"
-          class="vp-form-h3-basic mx-auto" style="text-align: center">Upload Story: </h3>
+            class="vp-form-h3-basic mx-auto" style="text-align: center">Upload Story: </h3>
           <div data-track-content data-content-name="Form" data-content-piece="form_selectdropdown_opt_1">
-              <div class="vp-form-bdr">
-                  <div class="form-group">
-                      <input type="file" accept=".pdf"/>
-                  </div>
-                </div>
+            <div class="vp-form-bdr">
+              <div class="form-group">
+                <label for="file">Choose File</label>
+                <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+              </div>
             </div>
-        <div class="form-group mx-auto">
+          </div>
+          <div class="form-group"style="text-align: center">
           <button data-track-content data-content-name="Form" data-content-piece="form_button_primary_1" type="submit"
-            class="btn btn-primary btn-lg" name="masterForm" mat-button (click)="openSnackBar()">Create Story</button>
+            class="btn btn-primary btn-lg" name="masterForm" mat-button (click)="createStory()">Create Story</button>
         </div>
       </form>
     </div>

@@ -25,6 +25,7 @@ import { MatButtonModule } from '@angular/material';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 const appRoutes:Routes = [
@@ -56,7 +57,8 @@ const appRoutes:Routes = [
     SettingsComponent,
     UploadStoryComponent,
     NavbarComponent,
-    CreateStoryComponent
+    CreateStoryComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

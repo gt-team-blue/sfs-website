@@ -30,13 +30,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     var self = this;
-    console.log(self.userService.getEmail());
     axios.get(Constants.SERVER_URL + '/api/stories/storiesByEditor', {
       params: {
         userEmail: self.userService.getEmail()
       }
     }).then((response) => {
-      console.log(response);
       this.userStories = response.data.data as StoryObject[];
   }).catch(function(error) {
     console.log(error.response);

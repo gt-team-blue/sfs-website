@@ -22,6 +22,11 @@
     padding-bottom: 165px;
     clear: both;
 }
+.hello {
+    margin: auto;
+    width: 100px;
+    height: 100px;  
+}
 
 .vp-form .form-group{ margin-bottom: 0; padding-top: 10px;padding-bottom: 20px;float: left;width: 100%; }
 .vp-form .form-group.vp-form-confirm{padding-top: 10px;}

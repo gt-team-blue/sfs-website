@@ -13,6 +13,7 @@
         <th scope="col">Tags</th>
         <th scope="col" class="icon">View</th>
         <th scope="col" class="icon">Edit</th>
+        <th scope="col" class="icon">Delete</th>
       </tr>
     </thead>
     <colgroup>
@@ -22,6 +23,7 @@
       <col style="width:40%"> <!-- creator -->
       <col style="width:20%"> <!-- view -->
       <col style="width:20%"> <!-- edit -->
+      <col style="width:20%"> <!-- delete -->
     </colgroup> 
     <tbody>
       <ng-container *ngFor = "let story of userStories"><tr>
@@ -31,6 +33,7 @@
         <td class="td-left">{{ story.tags[0]}}</td> <!-- Pipe date to medium format -->
         <td class="td-center"><a (click)="storyService.storyView(story)"><i class="material-icons">remove_red_eye</i></a></td>
         <td class="td-center"><a (click)="storyService.storyEdit(story)"><i class="material-icons">edit</i></a></td>
+        <td class="td-center"><a (click)="storyService.storyDelete(story)"><i class="material-icons">delete</i></a></td>
         </tr></ng-container>
     </tbody>
    </table>
