@@ -7,9 +7,9 @@ export class StoryObject {
     coverImagePointer: string;
     tags: string[]; // string representing a user's first name
     editAccess: string[];
-    lastUpdated: string; //last updated
+    lastUpdated: Date; //last updated
 
-    constructor(_id: string, story_id: string, title:string, creator:string, tags:string[], editAccess: string[], lastUpdated: string) {
+    constructor(_id: string, story_id: string, title:string, creator:string, tags:string[], editAccess: string[], lastUpdated: Date) {
         this._id = _id;
         this.story_id = story_id;
         this.title = title;

@@ -63,7 +63,7 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { onSameUrlNavigation: 'reload' }),
     FormsModule,
     NgIdleKeepaliveModule.forRoot(),
     ReactiveFormsModule,
@@ -81,6 +81,6 @@ const appRoutes:Routes = [
     StoryService,
     CookieService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

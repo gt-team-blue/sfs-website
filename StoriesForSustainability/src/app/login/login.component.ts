@@ -22,11 +22,6 @@ export class LoginComponent implements OnInit {
   constructor(private cookieService: CookieService, private route: ActivatedRoute, private router:Router, private user:UserService, private http:HttpClient, private app:AppComponent) {}
 
   ngOnInit() {
-    // this.http.post('/getLoginCredentials',{}).toPromise().then((result) => {
-    //   if(result['isAuthenticated'] == true){
-    //     this.router.navigate(['home']);
-    //   }
-    //  });
      this.loggedInErrorMessage = this.user.getUserLoggedInErrorMessage();
   }
 

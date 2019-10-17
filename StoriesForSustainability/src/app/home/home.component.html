@@ -33,9 +33,12 @@
         <td class="td-left">{{ story.tags[0]}}</td> <!-- Pipe date to medium format -->
         <td class="td-center"><a (click)="storyService.storyView(story)"><i class="material-icons">remove_red_eye</i></a></td>
         <td class="td-center"><a (click)="storyService.storyEdit(story)"><i class="material-icons">edit</i></a></td>
-        <td class="td-center"><a (click)="storyService.storyDelete(story)"><i class="material-icons">delete</i></a></td>
+        <td class="td-center"><a (click)="deleteStory(story)"><i class="material-icons">delete</i></a></td>
         </tr></ng-container>
     </tbody>
    </table>
+   <ng-container *ngIf="refresh">
+     <div></div>
+   </ng-container>
   </div>
 </div>
