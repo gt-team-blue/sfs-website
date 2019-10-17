@@ -6,6 +6,7 @@ import { AppComponent } from '../app.component';
 import * as Constants from '../constants/Network';
 import axios from 'axios';
 import { maybeQueueResolutionOfComponentResources } from '@angular/core/src/metadata/resource_loading';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   loggedInErrorMessage: string;
   username: string = "";
   password: string = "";
-  constructor(private route: ActivatedRoute, private router:Router, private user:UserService, private http:HttpClient, private app:AppComponent) {}
+  constructor(private cookieService: CookieService, private route: ActivatedRoute, private router:Router, private user:UserService, private http:HttpClient, private app:AppComponent) {}
 
   ngOnInit() {
     // this.http.post('/getLoginCredentials',{}).toPromise().then((result) => {
@@ -40,12 +41,13 @@ export class LoginComponent implements OnInit {
         email: this.username,
         password: this.password
       }).then((response) => {
-        // console.log(response);
-        var res = response.data.user;
+        let res = response.data.user;
         self.user.createUserObject(res.username, res.email, res._id);
+        self.cookieService.set('username', res.username, 1);
+        self.cookieService.set('_id', res._id, 1);
+        self.cookieService.set('email', res.email, 1);
         self.router.navigate(['/home']);
       }).catch(function (error) {
-        console.log(Object.values(error.response.data)[0]);
         self.loggedInErrorMessage = Object.values(error.response.data)[0] as string;
       });
     }

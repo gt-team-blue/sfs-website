@@ -25,7 +25,7 @@ import { MatButtonModule } from '@angular/material';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FileSelectDirective } from 'ng2-file-upload';
+import { CookieService } from 'ngx-cookie-service';
 
 
 const appRoutes:Routes = [
@@ -35,10 +35,12 @@ const appRoutes:Routes = [
   },
   {
     path: 'home',
+    canActivate: [AuthGuard],
     component: HomeComponent
   },
   {
     path: 'create',
+    canActivate: [AuthGuard],
     component: CreateStoryComponent
   },
   {
@@ -57,8 +59,7 @@ const appRoutes:Routes = [
     SettingsComponent,
     UploadStoryComponent,
     NavbarComponent,
-    CreateStoryComponent,
-    FileSelectDirective
+    CreateStoryComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +78,8 @@ const appRoutes:Routes = [
   providers: [
     UserService,
     AuthGuard,
-    StoryService
+    StoryService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
