@@ -74,7 +74,6 @@ handleFileInput(files: FileList) {
           }
         }).then((res) => {
           if (!res.data.success) {
-            console.log(res.data);
             self.snackBarMessage = res.data;
             self.openSnackBar();
           }

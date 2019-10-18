@@ -11,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
-import { UploadStoryComponent } from './upload-story/upload-story.component';
 import { AuthGuard } from './auth.guard';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; 
 import { HttpClientModule } from '@angular/common/http';
@@ -22,10 +21,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule, MatSelectModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CookieService } from 'ngx-cookie-service';
+import { EditStoryComponent } from './edit-story/edit-story.component';
 
 
 const appRoutes:Routes = [
@@ -44,9 +43,9 @@ const appRoutes:Routes = [
     component: CreateStoryComponent
   },
   {
-    path: 'create/:planType',
+    path: 'edit/:_id',
     canActivate: [AuthGuard],
-    component: UploadStoryComponent
+    component: EditStoryComponent
   },
 ]
 @NgModule({
@@ -57,9 +56,9 @@ const appRoutes:Routes = [
     FooterComponent,
     LoginComponent,
     SettingsComponent,
-    UploadStoryComponent,
     NavbarComponent,
-    CreateStoryComponent
+    CreateStoryComponent,
+    EditStoryComponent
   ],
   imports: [
     BrowserModule,

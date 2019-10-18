@@ -1,0 +1,36 @@
+.select-group {
+    text-align:center;
+}
+
+.input-group {
+    margin: auto;
+}
+
+.submit {
+    text-align:center;
+}
+
+.center1 {
+    align-items: center;
+}
+
+.row {
+    max-width:500px;
+}
+
+.entire-page{
+    padding-bottom: 165px;
+    clear: both;
+}
+.hello {
+    margin: auto;
+    width: 100px;
+    height: 100px;  
+}
+
+.vp-form .form-group{ margin-bottom: 0; padding-top: 10px;padding-bottom: 20px;float: left;width: 100%; }
+.vp-form .form-group.vp-form-confirm{padding-top: 10px;}
+.vp-form .has-warning { padding-top: 16px;padding-bottom: 16px; }
+.vp-form .form-group.vp-form-radio{padding-top: 10px;margin-left:10px;}
+.vp-form .form-group.vp-form-radio p{margin: 0 0 10px;}
+.vp-form textarea.form-control{ resize: none; height: 250px;}

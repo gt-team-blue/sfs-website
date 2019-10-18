@@ -1,15 +1,15 @@
 <app-navbar></app-navbar>
 <div class="entire-page">
-  <h1 style="text-align: center">Create Story</h1>
+  <h1 style="text-align: center">Edit Story</h1>
   <div class="row">
     <div class="col-md-12 center1">
       <form id="masterForm" method="post" class="vp-form mx-auto">
           <div data-track-content data-content-name="Form" data-content-piece="form_input_req_1" class="vp-form-text">
               <div class="vp-form-bdr">
                 <h3 data-track-content data-content-name="Form" data-content-piece="form_text_title_section_2"
-                  class="vp-form-h3-basic" style="text-align: center">Enter Story Title:</h3>
+                  class="vp-form-h3-basic" style="text-align: center">Edit Story Title:</h3>
                 <input [(ngModel)]="title" type="text" class="form-control" id="vpInputReq" name="vpInputReq"
-                  placeholder="" />
+                  placeholder="{{story.title}}" />
               </div>
               <div *ngIf="titleErr" style="color:red;">{{titleErr}}</div>
               <div class="vp-form-message"><span></span></div>
@@ -26,7 +26,7 @@
           </div>
           <div class="form-group"style="text-align: center">
           <button data-track-content data-content-name="Form" data-content-piece="form_button_primary_1" type="submit"
-            class="btn btn-primary btn-lg" name="masterForm" mat-button (click)="createStory()">Create Story</button>
+            class="btn btn-primary btn-lg" name="masterForm" mat-button (click)="createStory()">Save Story</button>
         </div>
       </form>
     </div>

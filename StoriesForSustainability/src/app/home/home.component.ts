@@ -71,5 +71,8 @@ reloadComponent() {
     }
     this.openSnackBar();
   }
+  openStory(story){
+    window.open(Constants.SERVER_URL + "/api/stories/download/" + story._id, "_blank");
+}
 
 }

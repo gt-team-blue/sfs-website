@@ -17,18 +17,16 @@ export class StoryService {
 
 storyEdit(story:StoryObject){
   this.story = story;
-  this.router.navigate(['edit/' + story.story_id]);
+  this.router.navigate(['edit/' + story._id]);
   }
-  storyView(story: StoryObject) {
-    this.story = story;
-    this.router.navigate(['view/' + story.story_id]);
-  }
-
   storyDelete(story: StoryObject) {
     axios.delete(Constants.SERVER_URL + '/api/stories/' + story._id).then((response) => {
       if (!response.data.success) {
         console.log(response.data.success);
       }
     })
+  }
+  getStory(){
+    return this.story;
   }
 }
