@@ -40,7 +40,7 @@
     "fsevents": "^2.0.7",
     "gulp-sass": "^4.0.2",
     "inputmask": "^4.0.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "linkifyjs": "^2.1.8",
     "material-design-icons": "^3.0.1",
     "material-icons": "^0.3.1",
