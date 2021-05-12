@@ -52,7 +52,7 @@
     "ngx-spinner": "^6.0.0",
     "node": "^12.4.0",
     "node-sass": "^4.12.0",
-    "nodemailer": "^4.6.8",
+    "nodemailer": "^6.4.16",
     "nodemon": "^1.18.3",
     "pug": "^2.0.4",
     "replace-ext": "^1.0.0",
